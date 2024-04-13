@@ -5,9 +5,9 @@
 
     // Sample data (can be replaced with actual data)
     const profiles = [
-        { name: 'John', age: 25, image: 'images/profpics/male1.jpg' },
-        { name: 'Emily', age: 27, image: 'images/profpics/female2.jpg' },
-        { name: 'Michael', age: 30, image: 'images/profpics/male3.jpg' },
+        { fname: 'Johnny', lname: 'Appleseed', age: 25, image: 'images/profpics/male1.jpg', sport: 'Basketball', skill: 'Intermediate', distance: '12' },
+        { fname: 'Emily', lname: 'Simile', age: 27, image: 'images/profpics/female2.jpg', sport: 'Fishing', skill: 'Beginner', distance: '7' },
+        { fname: 'Michael', lname: 'Jordan', age: 30, image: 'images/profpics/male3.jpg', sport: 'Soccer', skill: 'Professional', distance: '0' },
     ];
 
     // Function to create a card
@@ -15,11 +15,14 @@
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <h2>${profile.name}, ${profile.age}</h2>
             <img src="${profile.image}" alt="${profile.name}">
+            <h2><b>${profile.fname} ${profile.lname}, ${profile.age} </b></h2>
+            <p>Skill level: ${profile.skill} ${profile.sport} player. </p>
+            <p>  Miles away: ${profile.distance} miles. </p>
+            <br>
             <div class="button-container">
                 <button class="dislike-button" style="background-color: #e74c3c; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem;">Disike</button>
-                <button class="like-button" style="background-color: #34D399; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem;">Let's Play!</button>
+                <button class="like-button" style="background-color: #34D399; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem;">Like</button>
             </div>
         `;
         cardContainer.appendChild(card);
@@ -70,4 +73,5 @@
                 // Additional logic if needed
             });
         });
+        
     });
