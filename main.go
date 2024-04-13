@@ -14,11 +14,11 @@ type testuser struct {
 	dist      int
 }
 
-func isSimilar(u1 testuser, u2 user, ageTheas, distTheas int) bool {
+func isSimilar(u1 testuser, u2 user, ageThresh, distThresh int) bool {
 	ageDiff := math.Abs(float64(u1.age - u2.age))
 	distDiff := math.Abs(float64(u1.dist - u2.dist))
 
-	return u1.sport == u2.sport && (u1.lvl == u2.lvl || (ageDiff <= float64(ageTheas) && distDiff <= float64(distTheas)))
+	return u1.sport == u2.sport && (u1.lvl == u2.lvl || (ageDiff <= float64(ageThresh) && distDiff <= float64(distThresh)))
 
 }
 
@@ -34,8 +34,8 @@ func matchedData(u []user, testUs testuser, age int, dist int) []user {
 }
 
 func main() {
-	ageThreas := 5
-	distThreas := 80
+	ageThresh := 5
+	distThresh := 80
 	test := testuser{
 		firstName: "Mike",
 		lastName:  "Hunter",
@@ -47,7 +47,7 @@ func main() {
 	}
 	users := read("fake2.csv")
 
-	simUser := matchedData(users, test, ageThreas, distThreas)
+	simUser := matchedData(users, test, ageThresh, distThresh)
 
 	stddump(simUser)
 }
