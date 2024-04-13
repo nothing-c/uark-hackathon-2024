@@ -18,7 +18,7 @@
             <h2>${profile.name}, ${profile.age}</h2>
             <img src="${profile.image}" alt="${profile.name}">
             <div class="button-container">
-                <button class="dislike-button" style="background-color: #e74c3c; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem;">Nah</button>
+                <button class="dislike-button" style="background-color: #e74c3c; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem;">Disike</button>
                 <button class="like-button" style="background-color: #34D399; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem;">Let's Play!</button>
             </div>
         `;
