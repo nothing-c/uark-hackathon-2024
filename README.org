@@ -1,0 +1,37 @@
+Theme: Sports and Fitness
+
+Current ideas:
+- Phone jumprope
+- Plan generator w/ web3 prediction market
+- Generating running/biking map based on local area
+- Tinder for sports (gym partners, tennis partners, etc) - yes
+  - Smart contract for both showing up?
+  - After-action review to verify skill lvl (reserved for premium)
+
+Pitch: solving the loneliness epidemic, references to Bowling Alone, repairing relationships from coof
+
+Backend: Go stdlib
+Frontend: React, Nextjs, Tailwind
+
+* Data
+Name
+Sports of interest
+Location
+Skill lvl (beginner/intermediate/advanced/professional)
+Picture
+
+* Functions
+Swipe - frontend, sends msg to backend to calc match
+Msg - frontend & backend
+Rate - backend
+Confirm meetup - backend, smart contract
+
+* Backend
+Data store in-mem
+Data input/output (write to desk)
+REST api for msg passing
+
+Kintone DB, running REST api
+
+
+Frontend PWA <-> Kintone DB <-> Starknet
