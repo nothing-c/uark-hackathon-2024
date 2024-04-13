@@ -5,9 +5,9 @@
 
     // Sample data (can be replaced with actual data)
     const profiles = [
-        { name: 'John', age: 25, image: 'images/male1.jpg' },
-        { name: 'Emily', age: 27, image: 'images/female2.jpg' },
-        { name: 'Michael', age: 30, image: 'images/male3.jpg' },
+        { name: 'John', age: 25, image: 'images/profpics/male1.jpg' },
+        { name: 'Emily', age: 27, image: 'images/profpics/female2.jpg' },
+        { name: 'Michael', age: 30, image: 'images/profpics/male3.jpg' },
     ];
 
     // Function to create a card
