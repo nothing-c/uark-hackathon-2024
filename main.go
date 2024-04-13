@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -50,8 +49,5 @@ func main() {
 
 	simUser := matchedData(users, test, ageThreas, distThreas)
 
-	for _, x := range simUser {
-		fmt.Println(x)
-	}
-
+	stddump(simUser)
 }
