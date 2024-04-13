@@ -35,11 +35,3 @@ Kintone DB, running REST api
 
 
 Frontend PWA <-> Kintone DB <-> Starknet
-
-* Kintone
-Kit Bayless
-halskdjf@gmail.com
-Subdomain: gladiators-uark
-Pass: quickmockup1
-gladiators-uark.kintone.com
-
