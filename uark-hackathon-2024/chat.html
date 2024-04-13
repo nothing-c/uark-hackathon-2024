@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CourtChat</title>
+<style>
+    body {
+        font-family: cursive;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    .chat-container {
+        width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chat-header {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+    .chat-messages {
+        padding: 10px;
+        height: 300px;
+        overflow-y: auto;
+    }
+    .message {
+        margin-bottom: 10px;
+    }
+    .message .sender {
+        font-weight: bold;
+    }
+    .message .time {
+        font-size: 12px;
+        color: #666;
+        margin-left: 10px;
+    }
+    .chat-input {
+        padding: 10px;
+        border-top: 1px solid #ccc;
+    }
+    .chat-input input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .chat-input input[type="submit"] {
+        padding: 8px 15px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .chat-input input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>CourtChat</h2>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <!-- Messages will be displayed here -->
+    </div>
+    <div class="chat-input">
+        <form id="message-form">
+            <input type="text" id="message" placeholder="Type your message...">
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('message-form');
+    const messageInput = document.getElementById('message');
+    const messagesContainer = document.getElementById('chat-messages');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const message = messageInput.value.trim();
+        if (message !== '') {
+            sendMessage(message);
+            messageInput.value = '';
+        }
+    });
+
+    function sendMessage(message) {
+        const now = new Date();
+        const time = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = `
+            <span class="sender">You:</span>
+            <span>${message}</span>
+            <span class="time">${time}</span>
+        `;
+        messagesContainer.appendChild(messageElement);
+        // Scroll to the bottom of the chat container
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+</script>
+
+</body>
+</html>
